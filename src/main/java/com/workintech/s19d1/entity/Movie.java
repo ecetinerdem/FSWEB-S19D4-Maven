@@ -40,13 +40,12 @@ public class Movie {
     @JoinTable(name = "movie_actor", schema = "fsweb", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "actor_id"))
     private List<Actor> actors;
 
-    public void addMovie(Actor actor) {
+    public void addActor(Actor actor) {
         if(actors == null) {
             actors = new ArrayList<>();
         }
         actors.add(actor);
     }
-
 
 
 }

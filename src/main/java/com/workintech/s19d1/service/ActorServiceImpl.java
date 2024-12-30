@@ -26,12 +26,12 @@ public class ActorServiceImpl implements ActorService{
     @Override
     public Actor findById(Long id) {
 
-        return actorRepository.findById(id).orElseThrow(() -> new ApiException("Actor is not found with given id " + id, HttpStatus.NOT_FOUND));
+        return actorRepository.findById(id).orElseThrow(() -> new ApiException("actor is not found with id: " + id, HttpStatus.NOT_FOUND));
     }
 
     @Override
     public Actor update(Long id, Actor actor) {
-        Actor existingActor = actorRepository.findById(id).orElseThrow(() -> new ApiException("Actor is not found with id " + id, HttpStatus.NOT_FOUND));
+        Actor existingActor = actorRepository.findById(id).orElseThrow(() -> new ApiException("actor is not found id: " + id, HttpStatus.NOT_FOUND));
         existingActor.setFirstName(actor.getFirstName());
         existingActor.setLastName(actor.getLastName());
         existingActor.setGender(actor.getGender());

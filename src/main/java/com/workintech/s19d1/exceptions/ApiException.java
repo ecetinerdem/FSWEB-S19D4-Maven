@@ -1,13 +1,12 @@
 package com.workintech.s19d1.exceptions;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.http.HttpStatus;
 
 
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class ApiException extends RuntimeException {
     private HttpStatus httpStatus;
 

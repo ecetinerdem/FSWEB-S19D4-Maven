@@ -40,6 +40,7 @@ public class ActorController {
 
     }
 
+    @Transactional
     @PostMapping
     public ActorResponse save(@Validated @RequestBody ActorRequest actorRequest) {
         Actor actor = actorRequest.getActor();
@@ -50,6 +51,7 @@ public class ActorController {
         Actor savedActor = actorService.save(actor);
         return Converter.actorCreateResponseConvert(savedActor);
     }
+    @Transactional
     @DeleteMapping("/{id}")
     public ActorResponse delete (@PathVariable("id") Long id) {
         Actor foundActor = actorService.findById(id);
